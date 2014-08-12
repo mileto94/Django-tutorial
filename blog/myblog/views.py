@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import Http404
 from myblog.models import Article
 
 
@@ -10,4 +10,8 @@ def index(request):
 
 
 def show_article(request, article_id):
-    return HttpResponse("You're looking for %s" % article_id)
+    try:
+        article = Article.objects.get(pk=article_id)
+    except Article.DoesNotExist:
+        raise Http404
+    return render(request, "myblog/base.html", {"article": article})
