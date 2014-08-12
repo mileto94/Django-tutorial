@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from django.http import Http404
+from django.shortcuts import render, get_object_or_404
 from myblog.models import Article
 
 
@@ -10,8 +9,5 @@ def index(request):
 
 
 def show_article(request, article_id):
-    try:
-        article = Article.objects.get(pk=article_id)
-    except Article.DoesNotExist:
-        raise Http404
-    return render(request, "myblog/base.html", {"article": article})
+    article = get_object_or_404(Article, pk=article_id)
+    return render(request, "myblog/show_article.html", {"article": article})
