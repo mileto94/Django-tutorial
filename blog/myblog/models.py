@@ -11,6 +11,7 @@ class Author(models.Model):
 
 
 class Article(models.Model):
+    # title = models.CharField(max_length=30)
     text = models.CharField(max_length=1000)
     pub_date = models.DateTimeField("date published")
     author = models.ForeignKey(Author)
@@ -20,3 +21,6 @@ class Article(models.Model):
 
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+    was_published_recently.admin_order_field = "pub_date"
+    was_published_recently.boolean = True
+    was_published_recently.short_description = "Published recently?"
