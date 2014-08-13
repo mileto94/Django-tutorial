@@ -15,6 +15,7 @@ class Article(models.Model):
     text = models.CharField(max_length=1000)
     pub_date = models.DateTimeField("date published")
     author = models.ForeignKey(Author)
+    # image = models.ImageField(height_field=600, width_field=500)
 
     def __str__(self):
         return self.text

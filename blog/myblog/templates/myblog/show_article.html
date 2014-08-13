@@ -2,11 +2,20 @@
 <html>
 <head>
     <title>Article</title>
+    <script type="text/javascript">
+        function goBack() {
+            window.history.back()
+        }
+    </script>
 </head>
 <body>
     <h1>LQLQLQL</h1>
-    <ul>
-    <li>{{ article.text|striptags}}</li>
-    </ul>
+    <hr>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    <form action="{url 'myblog:show_article' article.id">
+        <p>{{ article.text|striptags}}</p>
+        <button type="button" class="btn btn-primary btn-lg" onclick="goBack()">Back</button>
+    </form>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 </body>
 </html>

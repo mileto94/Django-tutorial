@@ -11,3 +11,7 @@ def index(request):
 def show_article(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
     return render(request, "myblog/show_article.html", {"article": article})
+
+
+def contact(request):
+    return render(request, "myblog/contact.html", {"contact": contact})
