@@ -63,7 +63,7 @@
             <div class="carousel-caption">
               <h1>One more for good measure.</h1>
               <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+              <p><a class="btn btn-lg btn-primary" href="/myblog/" role="button">Browse gallery</a></p>
             </div>
           </div>
         </div>
@@ -81,6 +81,8 @@
               <div class="col-md-7">
                 <h3 class="featurette-heading">Latest news   <a href="{% url 'myblog:show_article' article.id %}">Read</a></h3>
                   {{ article.text }}
+                  <!-- Generates 3 points: ... -->
+                  </p>&hellip;</p>
               </div>
               <div class="col-md-5">
                 <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRgpOd6gHameExZyvZDm4mIaXrrNJcEoIa1jjZBL2IJEnoZToPN4A">
