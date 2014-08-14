@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Contact</title>
+{% extends 'myblog/base.html' %}
+
+
+{% block contact %}
     <script type="text/javascript">
         function goBack() {
             window.history.back()
         }
     </script>
-</head>
-<body>
+
+    <div class="align-text">
     <form>
         <h4>National Geographic Museum and Live!</h4>
         <ul>
@@ -20,7 +20,7 @@
             <li>(National Geographic, Traveler, Adventure, and National Geographic Kids) 800 NGS LINE (800 647 5463) 800 548 9797 (TDD)
             </li>
         </ul>
-        <button type="button" class="btn btn-primary btn-lg" onclick="goBack()">Back</button>
+         <button type="button" class="btn btn-info btn-lg pull-right" onclick="goBack()">Back</button>
     </form>
-</body>
-</html>
+    </div>
+{% endblock %}

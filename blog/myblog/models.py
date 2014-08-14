@@ -12,7 +12,7 @@ class Author(models.Model):
 
 class Article(models.Model):
     # title = models.CharField(max_length=30)
-    text = models.CharField(max_length=1000)
+    text = models.CharField(max_length=1000000000000)
     pub_date = models.DateTimeField("date published")
     author = models.ForeignKey(Author)
     # image = models.ImageField(height_field=600, width_field=500)

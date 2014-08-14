@@ -8,4 +8,6 @@ urlpatterns = patterns("",
                            name="show_article"),
                        url(r"^contact/$", views.contact,
                            name="contact"),
+                       url(r"^\d+/contact/$", views.contact,
+                           name="contact"),
                        )
