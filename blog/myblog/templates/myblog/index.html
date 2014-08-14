@@ -23,6 +23,7 @@
 
 
     <title>Nat Geo Blog</title>
+    <link href="/static/carousel.css" rel="stylesheet">
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -77,7 +78,7 @@
       </ol>
       <div class="carousel-inner">
         <div class="item active">
-          <img src="http://newswatch.nationalgeographic.com/files/2014/05/earth20140522-full-600x337.jpg" alt="First slide">
+          <img src="http://api.ning.com/files/H5Z4QPX7t*ZFwRJUxG98fFKZlP7umuYrz1NpBs3Ho6pJgMaA7oy-rAx-kK8gU4Fgx66uL6I-4YDetuEfKFIQqKmNS5r9Oq16/natgeo.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Example headline.</h1>
@@ -148,8 +149,8 @@
         {% for article in latest_articles %}
         <div class="row featurette">
               <div class="col-md-7">
-                <h2 class="featurette-heading">Latest news<span class="text-muted"> National Geographic</span></h2>
-                  <li><a href="{% url 'myblog:show_article' article.id %}">{{ article.text }}</a></li>
+                <h3 class="featurette-heading">Latest news   <a href="{% url 'myblog:show_article' article.id %}">Read</a></h3>
+                  {{ article.text }}
               </div>
               <div class="col-md-5">
                 <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRgpOd6gHameExZyvZDm4mIaXrrNJcEoIa1jjZBL2IJEnoZToPN4A">
@@ -179,6 +180,8 @@
     <!-- Java Script -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!--      <script scr="content.js"></script> -->
 
   </body>
 </html>
