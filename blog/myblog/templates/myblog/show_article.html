@@ -16,6 +16,9 @@
         <p>{{ article.text|striptags}}</p>
         <button type="button" class="btn btn-primary btn-lg" onclick="goBack()">Back</button>
     </form>
+
+    {% load staticfiles %}
+        <img src="{% static "./google.png" %}" alt="My image"/>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
 </body>
 </html>
