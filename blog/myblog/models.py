@@ -11,18 +11,20 @@ class Author(models.Model):
 
 
 class Article(models.Model):
-    # title = models.CharField(max_length=30)
-    text = models.CharField(max_length=1000000000000)
+    title = models.CharField(max_length=30, default="")
+    text = models.TextField(max_length=1000000000)
     pub_date = models.DateTimeField("date published")
     author = models.ForeignKey(Author)
     # image = models.ImageField(height_field=600, width_field=500)
+    rating = models.IntegerField(default=0)
+    comment = models.TextField(max_length=200, default="")
 
     def __str__(self):
-        return self.text
+        return self.title
 
     def was_published_recently(self):
         now = timezone.now()
-        return now >= self.pub_date >= now - datetime.timedelta(days=1)
+        return now >= self.pub_date >= now - datetime.timedelta(days=5)
     was_published_recently.admin_order_field = "pub_date"
     was_published_recently.boolean = True
     was_published_recently.short_description = "Published recently?"
