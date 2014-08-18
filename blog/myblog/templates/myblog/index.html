@@ -48,7 +48,7 @@
           </div>
         </div>
         <div class="item">
-          <img src="http://www.miswallpapers.net/2008-2009Walls/reptiles/thumb/TNG_JLM-NatGeo-rattlesnake_in_Florida_mangrove.jpg" alt="Second slide">
+          <!-- <img src="static/light.jpg" alt="Second slide"> -->
           <div class="container">
             <div class="carousel-caption">
               <h1>Another example headline.</h1>
@@ -80,7 +80,9 @@
         {% for article in latest_articles %}
         <div class="row featurette">
               <div class="col-md-7">
-                <h3 class="featurette-heading">Latest news   <a href="{% url 'myblog:show_article' article.id %}">Read</a></h3>
+                <h3 class="featurette-heading">Latest news   <a href="{% url 'myblog:show_article' article.id %}">
+                <button type="button" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-primary">  Read</button></a></h3>
+
                   {{ article.text }}
                   <!-- Generates 3 points: ... -->
                   <!-- </p>&hellip;</p> -->
