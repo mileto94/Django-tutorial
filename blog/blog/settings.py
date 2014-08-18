@@ -74,13 +74,17 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Sofia'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+# When USE_TZ is False, this is the time zone in which Django will store all
+# datetimes. When USE_TZ is True, this is the default time zone that Django
+# will use to display datetimes in templates and to interpret datetimes
+# entered in forms.
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
