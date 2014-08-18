@@ -11,12 +11,19 @@
 
 $(document).ready(function() {
     "use strict";
+
     function goBack() {
         window.history.back();
     }
 
-    // $(".like").on("click", function(rated) {
-    //     rated += 1;
-    //     console.log(rated);
-    // });
+    $(".like").on("click", function() {
+        var rated = $("#liked").data().rating;
+        var request = $.ajax({
+            type: "POST",
+            data: {
+                id: rated
+            },
+            dataType: "html"
+        });
+    });
 });

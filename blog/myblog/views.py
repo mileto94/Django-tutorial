@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, HttpResponse
 from myblog.models import Article
+from django.views.decorators.csrf import csrf_exempt
 
 
 def index(request):
@@ -14,8 +15,11 @@ def oldest_news_index(request):
     return render(request, "myblog/index.html", context)
 
 
+@csrf_exempt
 def show_article(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
+    if request.method == "POST":
+        return HttpResponse("You've liked it!")
     return render(request, "myblog/show_article.html", {"article": article})
 
 
