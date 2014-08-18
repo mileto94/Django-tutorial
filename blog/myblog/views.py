@@ -19,7 +19,9 @@ def oldest_news_index(request):
 def show_article(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
     if request.method == "POST":
-        return HttpResponse("You've liked it!")
+        article.rating += 1
+        article.save()
+        return HttpResponse("You've liked this article " + str(article.rating))
     return render(request, "myblog/show_article.html", {"article": article})
 
 
