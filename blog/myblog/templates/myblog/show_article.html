@@ -96,7 +96,7 @@
         <i class="icon-kettle"></i> -->
         <br>
         <img src="http://d3haopv1cs1fi8.cloudfront.net/img/innhand/facebook-booking-app/facebook-like-button.png" class="like"/>
-        <p id="liked" data-rating="{{ article.rating }}">Rating: <span>{{ article.rating }}</span></p>
+        <form action="." method="post"><p id="liked" data-rating="{{ article.rating }}">Rating: <span>{{ article.rating }}</span></p></form>
     </div>
     <hr>
 
@@ -122,11 +122,11 @@
 
     <script type="text/javascript">
     $(".like").on("click", function() {
-        var rated = $("#liked").data();
-        rated.rating += 1;
-        $("#liked").data("rating", rated.rating);
-        console.log($("#liked").data());
-        $("span").text("" + $("#liked").data().rating);
+        var rated = $("#liked").data("rating");
+        rated += 1;
+        $("#liked").data("rating", rated);
+        console.log($("#liked").data("rating"));
+        $("span").text("" + rated);
     });
     </script>
 </body>
