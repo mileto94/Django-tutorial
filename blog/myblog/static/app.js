@@ -1,16 +1,22 @@
-/* globals $, alert */
-'use strict';
+/* globals $, console, document, window */
 
-
-// $('#loading-example-btn').click(function() {
+// $("#loading-example-btn").click(function() {
 //     var btn = $(this);
-//     btn.button('loading');
+//     btn.button("loading");
 //     // $.ajax().always(function() {
-//     //     tn.button('reset');
+//     //     tn.button("reset");
 //     // });
-//     alert('HHEHHEHEHEHY');
+//     alert("HHEHHEHEHEHY");
 // });
 
-function goBack() {
-    window.history.back();
-}
+$(document).ready(function() {
+    "use strict";
+    function goBack() {
+        window.history.back();
+    }
+
+    // $(".like").on("click", function(rated) {
+    //     rated += 1;
+    //     console.log(rated);
+    // });
+});

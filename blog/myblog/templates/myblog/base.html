@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,31 +25,33 @@
 
     <title>Nat Geo Blog</title>
     <link href="/static/carousel.css" rel="stylesheet">
-    <script src="/static/app.js"></script>
-  </head>
+</head>
 <!-- NAVBAR
 ================================================== -->
-  <body>
-    <div class="navbar-wrapper">
-      <div class="container">
 
-        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="http://www.nationalgeographic.com/">Nat Geo</a>
-            </div>
-            <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href='{% url "myblog:index" %}'>Home</a></li>
-                <!-- <li><a href="#about">About</a></li> -->
-                <li><a href='{% url "myblog:contact" %}'>Contact</a></li>
-                <!-- <li class="dropdown">
+<body>
+    <div class="navbar-wrapper">
+        <div class="container">
+
+            <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="http://www.nationalgeographic.com/">Nat Geo</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href='{% url "myblog:index" %}'>Home</a>
+                            </li>
+                            <!-- <li><a href="#about">About</a></li> -->
+                            <li><a href='{% url "myblog:contact" %}'>Contact</a>
+                            </li>
+                            <!-- <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="#">Action</a></li>
@@ -60,12 +63,12 @@
                     <li><a href="#">One more separated link</a></li>
                   </ul>
                 </li> -->
-              </ul>
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-      </div>
+        </div>
     </div>
 
     <!-- Carousel
@@ -74,21 +77,18 @@
 
     <!-- Marketing messaging and featurettes
     ================================================== -->
-    {% block review %}
+    {% block review %} {% endblock %} {% block latest_news %} {% endblock %} {% block contact %} {% endblock %}
 
-    {% endblock %}
+    <!-- FOOTER -->
+    <footer>
+        <p class="pull-right"><a href="#">Back to top</a>
+        </p>
+        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
+        </p>
+    </footer>
 
-    {% block latest_news %} {% endblock %}
-
-    {% block contact %} {% endblock %}
-
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
-
-    </div><!-- /.container -->
+    </div>
+    <!-- /.container -->
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -99,6 +99,7 @@
     <!-- Java Script -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+    <script src="/static/app.js"></script>
+</body>
 
-  </body>
 </html>

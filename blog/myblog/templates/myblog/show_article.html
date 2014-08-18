@@ -27,7 +27,8 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,56 +44,70 @@
     <title>Nat Geo Blog</title>
 
     <link href="/static/carousel.css" rel="stylesheet">
-    <script src="/static/app.js"></script>
-  </head>
+</head>
 <!-- NAVBAR
 ================================================== -->
-  <body>
+
+<body>
     <div class="navbar-wrapper">
-      <div class="container">
+        <div class="container">
 
-        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="http://www.nationalgeographic.com/">Nat Geo</a>
+            <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="http://www.nationalgeographic.com/">Nat Geo</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="">Home</a>
+                            </li>
+                            <li><a href="contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="">Home</a></li>
-                <li><a href="contact">Contact</a></li>
-              </ul>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-
-    <p>Leave a comment below:</p>
-
-
 
     <!-- Go Back Button -->
     <div class="align-text">
 
-    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-    <form action="{url 'myblog:show_article' article.id">
-        <p>{{ article.text|striptags}}</p>
-        <br/><br/>
-        <button type="button" class="btn btn-info btn-lg pull-right" onclick="goBack()">Back</button>
-    </form>
+        {% if error_message %}
+        <p>
+            <strong>{{ error_message }}</strong>
+        </p>{% endif %}
+        <form action="{url 'myblog:show_article' article.id">
+            <h1>{{ article.title|striptags}}</h1>
+            <p>{{ article.text|striptags}}</p>
+            <br/>
+            <br/>
+            <button type="button" class="btn btn-info btn-lg pull-right" onclick="goBack()">Back</button>
+        </form>
+        <p>If you want you may leave a comment below:</p>
+        <textarea name="comment" rows="4" cols="50" id="commentBodyField" placeholder="Enter your comment..." maxlength="300"></textarea>
+        <!--     <i class="icon-large icon-thumbs-up"></i>
+        <i class="icon-kettle"></i> -->
+        <br>
+        <img src="http://d3haopv1cs1fi8.cloudfront.net/img/innhand/facebook-booking-app/facebook-like-button.png" class="like"/>
+        <p id="liked" data-rating="{{ article.rating }}">Rating: <span>{{ article.rating }}</span></p>
     </div>
     <hr>
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p class="pull-right"><a href="#">Back to top</a>
+        </p>
+        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
+        </p>
+    </footer>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -101,8 +116,19 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
     <!-- Java Script -->
-    <script src="http://code.jquery.com/jquery-latest.js"></script>    
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+    <script src="/static/app.js"></script>
 
-  </body>
+    <script type="text/javascript">
+    $(".like").on("click", function() {
+        var rated = $("#liked").data();
+        rated.rating += 1;
+        $("#liked").data("rating", rated.rating);
+        console.log($("#liked").data());
+        $("span").text("" + $("#liked").data().rating);
+    });
+    </script>
+</body>
+
 </html>
