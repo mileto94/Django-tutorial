@@ -28,19 +28,30 @@ class ArticleMethodTest(TestCase):
         self.assertEqual(old_article.was_published_recently(), False)
 
 
-class ArticleViewTest(TestCase):
-    def create_article(title, text, days, author, rating, comment):
-        return Article.objects.create(title=title,
-                                      text=text,
-                                      pub_date=timezone.now() + datetime.timedelta(days=days),
-                                      author=author,
-                                      rating=rating,
-                                      comment=comment
-                                      )
+def create_article(title, text, days, author_name, rating, comment):
+    author = Author(name=author_name)
+    author.save()
+    return Article.objects.create(title=title,
+                                  text=text,
+                                  pub_date=timezone.now() + datetime.timedelta(days=days),
+                                  author=author,
+                                  rating=rating,
+                                  comment=comment
+                                  )
 
+
+class ArticleViewTest(TestCase):
     def test_index_view_with_no_articles(self):
         response = self.client.get(reverse("myblog:index"))
         self.assertEqual(response.status_code, 200)
         # is done if there are no articles
         # self.assertContains(response, "No polls available")
         self.assertQuerysetEqual(response.context["latest_articles"], [])
+
+    def test_index_view_with_past_article(self):
+        joe = Author(name="joe")
+        joe.save()
+        create_article("James", "Arthur", -30, "joe", 3, "Nice")
+        response = self.client.get(reverse("myblog:index"))
+        self.assertQuerysetEqual(response.context["latest_articles"],
+                                 ["<Article: James>"])

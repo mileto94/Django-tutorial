@@ -91,12 +91,20 @@
             <button type="button" class="btn btn-info btn-lg pull-right" onclick="goBack()">Back</button>
         </form>
         <p>If you want you may leave a comment below:</p>
-        <textarea name="comment" rows="4" cols="50" id="commentBodyField" placeholder="Enter your comment..." maxlength="300"></textarea>
+
+        <form action="." method="post">
+            <textarea name="comment" rows="4" cols="50" id="commentBodyField" placeholder="Enter your comment..." maxlength="300"></textarea>
+            <button class="btn btn-submit" id="send-comment">Send comment</button>
+        </form>
         <!--     <i class="icon-large icon-thumbs-up"></i>
         <i class="icon-kettle"></i> -->
         <br>
-        <img src="http://d3haopv1cs1fi8.cloudfront.net/img/innhand/facebook-booking-app/facebook-like-button.png" class="like"/>
-        <form action="." method="post"><p id="liked" data-rating="{{ article.rating }}">Rating: <span>{{ article.rating }}</span></p></form>
+        <img src="http://d3haopv1cs1fi8.cloudfront.net/img/innhand/facebook-booking-app/facebook-like-button.png" class="like" />
+        <form action="." method="post">
+            <p id="liked" data-rating="{{ article.rating }}">Rating:
+                <span>{{ article.rating }}</span>
+            </p>
+        </form>
     </div>
     <hr>
 

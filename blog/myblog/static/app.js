@@ -26,4 +26,9 @@ $(document).ready(function() {
             dataType: "html"
         });
     });
+
+    $("#send-comment").on("click", function(){
+        
+    });
+
 });
