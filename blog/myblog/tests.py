@@ -58,3 +58,10 @@ class ArticleViewTest(TestCase):
         create_article("Homer", "Simpsons", 30, "Emily", 3, "Good")
         response = self.client.get(reverse("myblog:index"))
         self.assertQuerysetEqual(response.context["latest_articles"], [])
+
+    def test_index_view_with_past_and_future_articles(self):
+        create_article("James", "Arthur", -30, "joe", 3, "Nice")
+        create_article("Homer", "Simpsons", 30, "Emily", 3, "Good")
+        response = self.client.get(reverse("myblog:index"))
+        self.assertQuerysetEqual(response.context["latest_articles"],
+                                 ["<Article: James>"])
