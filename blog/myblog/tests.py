@@ -49,8 +49,6 @@ class ArticleViewTest(TestCase):
         self.assertQuerysetEqual(response.context["latest_articles"], [])
 
     def test_index_view_with_past_article(self):
-        joe = Author(name="joe")
-        joe.save()
         create_article("James", "Arthur", -30, "joe", 3, "Nice")
         response = self.client.get(reverse("myblog:index"))
         self.assertQuerysetEqual(response.context["latest_articles"],
