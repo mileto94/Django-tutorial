@@ -29,8 +29,13 @@ class ArticleMethodTest(TestCase):
 
 
 def create_article(title, text, days, author_name, rating, comment):
-    author = Author(name=author_name)
-    author.save()
+    names = Author.objects.all()
+    names = [name.name for name in names]
+    names = [name.encode("utf-8") for name in names]
+    if author_name not in names:
+        author = Author(name=author_name)
+        author.save()
+    author = Author.objects.get(name=author_name)
     return Article.objects.create(title=title,
                                   text=text,
                                   pub_date=timezone.now() + datetime.timedelta(days=days),
@@ -65,3 +70,10 @@ class ArticleViewTest(TestCase):
         response = self.client.get(reverse("myblog:index"))
         self.assertQuerysetEqual(response.context["latest_articles"],
                                  ["<Article: James>"])
+
+    def test_index_view_with_two_past_articles(self):
+        create_article("John", "Atanasov", -30, "emma", 4, "")
+        create_article("Grigor", "Dimitrov", -30, "joe", 4, "Perfect!")
+        response = self.client.get(reverse("myblog:index"))
+        self.assertQuerysetEqual(response.context["latest_articles"],
+                                 ["<Article: Grigor>", "<Article: John>"])
