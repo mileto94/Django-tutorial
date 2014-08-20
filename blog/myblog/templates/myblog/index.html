@@ -2,100 +2,120 @@
 
 
 {% block review %}
-    <div class="container marketing">
+ <div class="container marketing">
 
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle" src="http://images.nationalgeographic.com/wpf/media-content/photos/000/823/cache/82396_990x742-cb1407254922.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <img class="img-circle" src="http://images.nationalgeographic.com/wpf/media-content/photos/000/824/cache/82421_990x742-cb1407340020.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+          <h2>Hello</h2>
+          <p>I'm glad you're visiting my page :) Have a nice journey across it!</p>
+          <p>English</p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="http://images.nationalgeographic.com/wpf/media-live/photos/000/825/cache/perseid-meteor-shower-01_82581_990x742.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <h2>Hola</h2>
+          <p>Me alegro de que estés visitando mi página :) Que tengas un buen viaje a través de él!</p>
+          <p>Español</p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="http://images.nationalgeographic.com/wpf/media-content/photos/000/824/cache/82421_990x742-cb1407340020.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <img class="img-circle" src="http://images.nationalgeographic.com/wpf/media-content/photos/000/823/cache/82396_990x742-cb1407254922.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+          <h2>Merhaba</h2>
+          <p>Ben bunu karşısında güzel bir yolculuk var :) Sayfamı ziyaret ettiğiniz sevindim!</p><p>Türk</p>
         </div><!-- /.col-lg-4 -->
+        <div class="col-lg-7">
+          <div id="google_translate_element"><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'es,tr,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, multilanguagePage: true}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        </div>
       </div><!-- /.row -->
+
 {% endblock %}
+
+
 
 
 {% block top_news %}
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="item active">
-          <img src="http://api.ning.com/files/H5Z4QPX7t*ZFwRJUxG98fFKZlP7umuYrz1NpBs3Ho6pJgMaA7oy-rAx-kK8gU4Fgx66uL6I-4YDetuEfKFIQqKmNS5r9Oq16/natgeo.jpg" alt="First slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="http://api.ning.com/files/H5Z4QPX7t*ZFwRJUxG98fFKZlP7umuYrz1NpBs3Ho6pJgMaA7oy-rAx-kK8gU4Fgx66uL6I-4YDetuEfKFIQqKmNS5r9Oq16/natgeo.jpg" alt="First slide">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Example headline.</h1>
+                        <p>Note: If you're viewing this page via a
+                            <code>file://</code>URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a>
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="item">
-          <!-- <img src="static/light.jpg" alt="Second slide"> -->
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+            <div class="item">
+                <!-- <img src="static/light.jpg" alt="Second slide"> -->
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Another example headline.</h1>
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a>
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="http://cdn.theanimals.pics/pictures/www.thedesignwork.com/wp-content/uploads/2011/03/lightning-huntington-beach-national-geographic-wallpaper.jpg" alt="Third slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="/myblog/" role="button">Browse gallery</a></p>
+            <div class="item">
+                <img src="http://cdn.theanimals.pics/pictures/www.thedesignwork.com/wp-content/uploads/2011/03/lightning-huntington-beach-national-geographic-wallpaper.jpg" alt="Third slide">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>One more for good measure.</h1>
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        <p><a class="btn btn-lg btn-primary" href="/myblog/" role="button">Browse gallery</a>
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div><!-- /.carousel -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+    <!-- /.carousel -->
 {% endblock %}
 
 
 {% block latest_news %}
-    {% if latest_articles %}
-        <ul>
+  {% if latest_articles %}
+    <ul>
         {% for article in latest_articles %}
         <div class="row featurette">
-              <div class="col-md-7">
-                <h3 class="featurette-heading">Latest news  - {{ article.title }}    <a href="{% url 'myblog:show_article' article.id %}">
-                <button type="button" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-primary">  Read</button></a></h3>
+            <div class="col-md-7">
+                <h3 class="featurette-heading">Latest news - {{ article.title }}
+                    <a href="{% url 'myblog:show_article' article.id %}">
+                        <button type="button" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-primary">Read</button>
+                    </a>
+                </h3>
 
-                  {{ article.text }}
-                  <!-- Generates 3 points: ... -->
-                  <!-- </p>&hellip;</p> -->
-              </div>
-              <div class="col-md-5">
-                <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRgpOd6gHameExZyvZDm4mIaXrrNJcEoIa1jjZBL2IJEnoZToPN4A">
-              </div>
+                {{ article.text }}
+                <!-- Generates 3 points: ... -->
+                <!-- </p>&hellip;</p> -->
             </div>
-            <hr class="featurette-divider">
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>No articles are available</p>
-        {{ article }}
-    {% endif %}
+            <div class="col-md-5">
+                <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRgpOd6gHameExZyvZDm4mIaXrrNJcEoIa1jjZBL2IJEnoZToPN4A">
+            </div>
+        </div>
+        <hr class="featurette-divider">{% endfor %}
+    </ul>
+  {% else %}
+    <p>No articles are available</p>
+    {{ article }}
+  {% endif %}
 {% endblock %}

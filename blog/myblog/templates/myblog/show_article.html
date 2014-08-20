@@ -34,6 +34,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="google-translate-customization" content="1b6e87e57be49eb-2b4d7c8e5d8aaf01-gbf42a6299e3604b7-19"></meta>
     <link rel="icon" href="http://getbootstrap.com/favicon.ico">
 
     <script src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
@@ -76,6 +77,7 @@
         </div>
     </div>
 
+
     <!-- Go Back Button -->
     <div class="align-text">
 
@@ -85,9 +87,15 @@
         </p>{% endif %}
         <form action="{url 'myblog:show_article' article.id">
             <h1>{{ article.title|striptags}}</h1>
+
             <p>{{ article.text|striptags}}</p>
             <br/>
             <br/>
+                <div id="google_translate_element"><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'es,tr,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, multilanguagePage: true}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
             <button type="button" class="btn btn-info btn-lg pull-right" onclick="goBack()">Back</button>
         </form>
         <p>If you want you may leave a comment below:</p>

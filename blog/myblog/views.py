@@ -12,7 +12,9 @@ def index(request):
 
 
 def oldest_news_index(request):
-    oldest_news = Article.objects.order_by("-pub_date")[-5:]
+    news = Article.objects.filter(pub_date__lte=timezone.now()
+                                  ).order_by("-pub_date")
+    oldest_news = news[len(news) - 5:]
     context = {"oldest_news": oldest_news}
     return render(request, "myblog/index.html", context)
 
