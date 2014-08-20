@@ -11,6 +11,7 @@ class ArticleMethodTest(TestCase):
         if it was published in past or future"""
     def setUp(self):
         self.joe = Author(name="joe")
+        self.joe.save()
 
     def test_was_published_with_future_date(self):
         future_article = Article("21255", pub_date=timezone.now() + datetime.timedelta(days=30),
@@ -49,8 +50,8 @@ class ArticleViewTest(TestCase):
     def test_index_view_with_no_articles(self):
         response = self.client.get(reverse("myblog:index"))
         self.assertEqual(response.status_code, 200)
-        # is done if there are no articles
-        # self.assertContains(response, "No polls available")
+        # there are no articles - so it's true
+        self.assertContains(response, "No articles are available")
         self.assertQuerysetEqual(response.context["latest_articles"], [])
 
     def test_index_view_with_past_article(self):
