@@ -43,14 +43,5 @@
         </p>
     </form>
     </div>
-
-    <script type="text/javascript">
-    $(".like").on("click", function() {
-        var rated = $("#liked").data("rating");
-        rated += 1;
-        $("#liked").data("rating", rated);
-        console.log($("#liked").data("rating"));
-        $("span").text("" + rated);
-    });
-    </script>
+  <hr>
 {% endblock go_back %}

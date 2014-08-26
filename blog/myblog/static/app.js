@@ -3,7 +3,7 @@
 $(document).ready(function() {
     "use strict";
 
-    $("#back").on("click", function(){
+    $("#back").on("click", function() {
         window.history.back();
     });
 
@@ -18,8 +18,16 @@ $(document).ready(function() {
         });
     });
 
-    $("#send-comment").on("click", function(){
-        
+    $("#send-comment").on("click", function() {
+
+    });
+
+    $(".like").on("click", function() {
+        var rated = $("#liked").data("rating");
+        rated += 1;
+        $("#liked").data("rating", rated);
+        console.log($("#liked").data("rating"));
+        $("span").text("" + rated);
     });
 
 });
