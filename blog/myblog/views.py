@@ -11,14 +11,6 @@ def index(request):
     return render(request, "myblog/index.html", context)
 
 
-def oldest_news_index(request):
-    news = Article.objects.filter(pub_date__lte=timezone.now()
-                                  ).order_by("-pub_date")
-    oldest_news = news[len(news) - 5:]
-    context = {"oldest_news": oldest_news}
-    return render(request, "myblog/index.html", context)
-
-
 @csrf_exempt
 def show_article(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
