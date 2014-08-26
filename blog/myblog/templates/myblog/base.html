@@ -49,9 +49,24 @@
                         <ul class="nav navbar-nav">
                             <li class="active"><a href='{% url "myblog:index" %}'>Home</a>
                             </li>
-                            <!-- <li><a href="#about">About</a></li> -->
+
                             <li><a href='{% url "myblog:contact" %}'>Contact</a>
                             </li>
+
+                                                        <li>{% block translate %}
+    <div id="google_translate_element">
+        <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'es,tr,en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                multilanguagePage: true
+            }, 'google_translate_element');
+        }
+        </script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        {% endblock translate %}</li>
                             <!-- <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
@@ -74,23 +89,21 @@
 
     <!-- Carousel
     ================================================== -->
-    {% block top_news %} {% endblock %}
+    {% block top_news %} {% endblock top_news %}
 
     <!-- Marketing messaging and featurettes
     ================================================== -->
-    {% block review %} {% endblock %} {% block latest_news %} {% endblock %} {% block contact %} {% endblock %}
+    {% block review %} {% endblock review %} {% block latest_news %} {% endblock latest_news %} {% block contact %} {% endblock contact %}  {% block go_back %} {% endblock go_back %}
 
-    {% block go_back %} {% endblock go_back %}
+        <!-- <hr> -->
 
-    <hr>
-
-    <!-- FOOTER -->
-    <footer>
-        <p class="pull-right"><a href="#">Back to top</a>
-        </p>
-        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
-        </p>
-    </footer>
+        <!-- FOOTER -->
+        <footer>
+            <p class="pull-right"><a href="#">Back to top</a>
+            </p>
+            <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
+            </p>
+        </footer>
 
     </div>
     <!-- /.container -->
