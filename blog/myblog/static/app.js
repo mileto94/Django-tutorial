@@ -8,7 +8,11 @@ $(document).ready(function() {
     });
 
     $(".like").on("click", function() {
-        var rated = $("#liked").data().rating;
+        var rated = $("#liked").data("rating");
+        rated += 1;
+        $("#liked").data("rating", rated);
+        console.log($("#liked").data("rating"));
+        $("span").text("" + rated);
         var request = $.ajax({
             type: "POST",
             data: {
@@ -16,18 +20,6 @@ $(document).ready(function() {
             },
             dataType: "html"
         });
-    });
-
-    $("#send-comment").on("click", function() {
-
-    });
-
-    $(".like").on("click", function() {
-        var rated = $("#liked").data("rating");
-        rated += 1;
-        $("#liked").data("rating", rated);
-        console.log($("#liked").data("rating"));
-        $("span").text("" + rated);
     });
 
 });

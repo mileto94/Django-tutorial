@@ -30,7 +30,8 @@
     </form>
     <p>If you want you may leave a comment below:</p>
 
-    <form action="." method="post">
+    <form action="{% url 'myblog:show_article' article.id %}" method="post">
+        {% csrf_token %}
         <textarea name="comment" rows="4" cols="50" id="commentBodyField" placeholder="Enter your comment..." maxlength="300"></textarea>
         <button class="btn btn-submit" id="send-comment">Send comment</button>
     </form>

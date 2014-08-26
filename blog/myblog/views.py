@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404, HttpResponse
+from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, HttpResponse
 from myblog.models import Article
 from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
+from django.core.urlresolvers import reverse
 
 
 def index(request):
@@ -15,12 +16,13 @@ def index(request):
 def show_article(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
     if request.method == "POST":
-        # if str(request.POST.get("comment")):
-        #     return HttpResponse("Thank you for leaving a comment :)")
-        article.rating += 1
+        if request.POST.get("id"):
+            article.rating += 1
+            article.save()
+            return HttpResponse(request.POST.get("id"))
+        article.comment = request.POST.get("comment")
         article.save()
-        # return HttpResponse("You've liked this article " + str(article.rating))
-        return HttpResponse(str(request.POST.get("id")))
+        return HttpResponse(article.comment)
     return render(request, "myblog/show_article.html", {"article": article})
 
 
