@@ -22,4 +22,17 @@ $(document).ready(function() {
         });
     });
 
+    $("#send-comment").on("click", function() {
+        var newComment = $("#commentBodyField").val();
+        var request = $.ajax({
+            type: "POST",
+            data: {
+                comment: newComment
+            }
+        }).done(function(data) {
+            console.log(data);
+            $("<p>" + data + "</p>").insertAfter("#send-comment");
+        });
+        return false;
+    });
 });
