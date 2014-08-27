@@ -19,6 +19,10 @@ body {
   width: 50px;
 }
 
+#google_translate_element {
+  padding: 15px;
+}
+
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
