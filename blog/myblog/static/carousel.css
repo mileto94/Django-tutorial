@@ -21,6 +21,7 @@ body {
 
 #google_translate_element {
   padding: 15px;
+  float: right;
 }
 
 /* CUSTOMIZE THE NAVBAR
