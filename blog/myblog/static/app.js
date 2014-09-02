@@ -35,4 +35,30 @@ $(document).ready(function() {
         });
         return false;
     });
+
+    $("#right").click(function() {
+        var currentSlide = $(".active");
+        var nextSlide = currentSlide.next();
+
+        if(nextSlide.length === 0) {
+            nextSlide = $(".item").first();
+        }
+        currentSlide.fadeOut(500).removeClass("active");
+        nextSlide.fadeIn(500).addClass("active");
+    });
+
+    $("#left").click(function() {
+        var currentSlide = $(".active");
+        var prevSlide = currentSlide.prev();
+
+        if(prevSlide.length === 0) {
+            prevSlide = $(".item").last();
+        }
+
+        currentSlide.fadeOut(500).removeClass("active");
+        prevSlide.fadeIn(500).addClass("active");
+    });
+
+
+
 });
