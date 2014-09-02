@@ -43,8 +43,8 @@ $(document).ready(function() {
         if(nextSlide.length === 0) {
             nextSlide = $(".item").first();
         }
-        currentSlide.fadeOut(500).removeClass("active");
-        nextSlide.fadeIn(500).addClass("active");
+        currentSlide.hide(600).removeClass('active');
+        nextSlide.show(300).addClass("active");
     });
 
     $("#left").click(function() {
@@ -55,8 +55,8 @@ $(document).ready(function() {
             prevSlide = $(".item").last();
         }
 
-        currentSlide.fadeOut(500).removeClass("active");
-        prevSlide.fadeIn(500).addClass("active");
+        currentSlide.hide(600).removeClass("active");
+        prevSlide.show(600).addClass("active");
     });
 
 
