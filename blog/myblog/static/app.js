@@ -36,7 +36,7 @@ $(document).ready(function() {
         return false;
     });
 
-    $("#right").click(function() {
+    var right = function() {
         var currentSlide = $(".active");
         var nextSlide = currentSlide.next();
 
@@ -55,9 +55,12 @@ $(document).ready(function() {
 
         currentDot.removeClass("active-dot");
         nextDot.addClass("active-dot");
-    });
+    };
 
-    $("#left").click(function() {
+    $("#right").click(right);
+
+
+    var left = function() {
         var currentSlide = $(".active");
         var prevSlide = currentSlide.prev();
 
@@ -77,6 +80,13 @@ $(document).ready(function() {
 
         currentDot.removeClass("active-dot");
         prevDot.addClass("active-dot");
-    });
+    };
+
+    $("#left").click(left);
+
+    setInterval(function(){
+        $("#right").trigger("click");
+    }, 5000);
+
 
 });
