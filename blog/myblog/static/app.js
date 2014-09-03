@@ -37,14 +37,14 @@ $(document).ready(function() {
     });
 
     var right = function() {
-        var currentSlide = $(".active");
+        var currentSlide = $(".active-slide");
         var nextSlide = currentSlide.next();
 
         if(nextSlide.length === 0) {
             nextSlide = $(".item").first();
         }
-        currentSlide.hide(600).removeClass("active");
-        nextSlide.show(300).addClass("active");
+        currentSlide.hide(600).removeClass("active-slide");
+        nextSlide.show(300).addClass("active-slide");
 
         var currentDot = $(".active-dot");
         var nextDot = currentDot.next();
@@ -61,15 +61,15 @@ $(document).ready(function() {
 
 
     var left = function() {
-        var currentSlide = $(".active");
+        var currentSlide = $(".active-slide");
         var prevSlide = currentSlide.prev();
 
         if(prevSlide.length === 0) {
             prevSlide = $(".item").last();
         }
 
-        currentSlide.hide(600).removeClass("active");
-        prevSlide.show(600).addClass("active");
+        currentSlide.hide(600).removeClass("active-slide");
+        prevSlide.show(600).addClass("active-slide");
 
         var currentDot = $(".active-dot");
         var prevDot = currentDot.prev();
