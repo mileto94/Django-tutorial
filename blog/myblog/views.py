@@ -8,7 +8,10 @@ from django.core.urlresolvers import reverse
 def index(request):
     latest_articles = Article.objects.filter(pub_date__lte=timezone.now()
                                              ).order_by("-pub_date")[:5]
-    context = {"latest_articles": latest_articles}
+    most_rated = Article.objects.order_by("-rating")[:3]
+    for article in most_rated:
+        article.text = article.text.split(".")[0]
+    context = {"latest_articles": latest_articles, "most_rated": most_rated}
     return render(request, "myblog/index.html", context)
 
 
