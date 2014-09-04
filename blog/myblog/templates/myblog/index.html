@@ -37,6 +37,7 @@
     <div class="carousel-inner">
         <div class="item active-slide active">
             <img src="http://api.ning.com/files/H5Z4QPX7t*ZFwRJUxG98fFKZlP7umuYrz1NpBs3Ho6pJgMaA7oy-rAx-kK8gU4Fgx66uL6I-4YDetuEfKFIQqKmNS5r9Oq16/natgeo.jpg" alt="First slide">
+            <!-- <img src={{ most_rated.0.image }}> -->
             <div class="container">
                 <div class="carousel-caption">
                     <h1>{{ most_rated.0.title }}</h1>
@@ -47,7 +48,8 @@
             </div>
         </div>
         <div class="item">
-            <img src="http://www.thedesignwork.com/wp-content/uploads/2011/03/manarola-italy-national-geographic-wallpaper.jpg">
+            <img src="http://www.zahorata.com/images/uploaded_images/pic_1343_bg.jpg">
+            <!-- <img src={{ most_rated.1.image }}> -->
             <div class="container">
                 <div class="carousel-caption">
                     <h1>{{ most_rated.1.title }}</h1>
@@ -59,6 +61,7 @@
         </div>
         <div class="item">
             <img src="http://cdn.theanimals.pics/pictures/www.thedesignwork.com/wp-content/uploads/2011/03/lightning-huntington-beach-national-geographic-wallpaper.jpg" alt="Third slide">
+            <!-- <img src={{ most_rated.2.image }}> -->
             <div class="container">
                 <div class="carousel-caption">
                     <h1>{{ most_rated.2.title }}</h1>
@@ -92,11 +95,14 @@
 
 {% block latest_news %}
     {% if latest_articles %}
+        <hr/>
         <ul>
+        <h1 class="news">Latest news</h1>
+        <!-- <br/> -->
         {% for article in latest_articles %}
         <div class="row featurette">
             <div class="col-md-7">
-                <h3 class="featurette-heading">Latest news - {{ article.title }}
+                <h3 class="featurette-heading">{{ article.title }}
                     <a href="{% url 'myblog:show_article' article.id %}">
                         <button type="button" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-primary">Read</button>
                     </a>
@@ -107,7 +113,8 @@
                 <!-- </p>&hellip;</p> -->
             </div>
             <div class="col-md-5">
-                <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRgpOd6gHameExZyvZDm4mIaXrrNJcEoIa1jjZBL2IJEnoZToPN4A">
+<!--                 <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRgpOd6gHameExZyvZDm4mIaXrrNJcEoIa1jjZBL2IJEnoZToPN4A"> -->
+                <img class="img-responsive featurette-heading" alt="Generic placeholder image" src={{ article.image }}>
             </div>
         </div>
         <hr class="featurette-divider">{% endfor %}

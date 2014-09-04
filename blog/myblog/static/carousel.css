@@ -10,13 +10,28 @@ body {
 }
 
 .align-text {
-  padding: 100px;
+  padding: 0 100px;
   text-align: justify;
+}
+
+.article-image {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 35%;
+  padding-right: 35%;
 }
 
 .like {
   height: 30px;
   width: 50px;
+}
+
+.news {
+  padding: 0 30%;
+  text-decoration: underline;
+  font-size: 70px;
+  font-family: serif; 
+  color: black;
 }
 
 #google_translate_element {
@@ -77,7 +92,6 @@ body {
 }
 
 
-
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
@@ -107,11 +121,12 @@ body {
   font-weight: 300;
   line-height: 1;
   letter-spacing: -1px;
+  color: gray;
 }
 
 .featurette-image {
-  width: 200px;
-  height: 200px;
+  width: auto;
+  height: 350px;
 }
 
 

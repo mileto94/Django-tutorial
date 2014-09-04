@@ -9,6 +9,7 @@
         <strong>{{ error_message }}</strong>
     </p>{% endif %}
     <form action="{url 'myblog:show_article' article.id">
+        <img src={{ article.image }} class="article-image">
         <h1>{{ article.title|striptags}}</h1>
 
         <p>{{ article.text|striptags}}</p>
