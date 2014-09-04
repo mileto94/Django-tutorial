@@ -42,7 +42,7 @@
                 <div class="carousel-caption">
                     <h1>{{ most_rated.0.title }}</h1>
                     <p>{{ most_rated.0.text }}.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a>
+                    <p><a class="btn btn-lg btn-primary" href="{% url 'myblog:show_article' most_rated.0.id %}" role="button">Learn more</a>
                     </p>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                 <div class="carousel-caption">
                     <h1>{{ most_rated.1.title }}</h1>
                     <p>{{ most_rated.1.text }}.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a>
+                    <p><a class="btn btn-lg btn-primary" href="{% url 'myblog:show_article' most_rated.1.id %}" role="button">Learn more</a>
                     </p>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                 <div class="carousel-caption">
                     <h1>{{ most_rated.2.title }}</h1>
                     <p>{{ most_rated.2.text }}.</p>
-                    <p><a class="btn btn-lg btn-primary" href="/myblog/" role="button">Browse gallery</a>
+                    <p><a class="btn btn-lg btn-primary" href="{% url 'myblog:show_article' most_rated.2.id %}" role="button">Learn more</a>
                     </p>
                 </div>
             </div>

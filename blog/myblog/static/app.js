@@ -88,5 +88,7 @@ $(document).ready(function() {
         $("#right").trigger("click");
     }, 5000);
 
-
+    $(".btn").hover(function() {
+        $(this).css("cursor", "pointer");
+    });
 });
