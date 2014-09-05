@@ -10,14 +10,22 @@ class Author(models.Model):
         return self.name
 
 
+# class Comment(models.Model):
+#     comment_body = models.TextField(max_length=300, default="")
+
+#     def __unicode__(self):
+#         return self.comment_body
+
+
 class Article(models.Model):
     title = models.CharField(max_length=30, default="")
     text = models.TextField(max_length=1000000000)
     pub_date = models.DateTimeField("date published")
     author = models.ForeignKey(Author)
-    # image = models.ImageField(height_field=600, width_field=500)
+    image = models.URLField(default="http://cdn.theanimals.pics/pictures/www.thedesignwork.com/wp-content/uploads/2011/03/lightning-huntington-beach-national-geographic-wallpaper.jpg")
     rating = models.IntegerField(default=0)
     comment = models.TextField(max_length=300, default="")
+    # comment = models.ForeignKey(Comment)
 
     def __str__(self):
         return self.title

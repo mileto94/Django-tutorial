@@ -1,6 +1,5 @@
 from django.contrib import admin
 from myblog.models import Article, Author
-# Register your models here.
 
 
 class ArticleAdmin(admin.ModelAdmin):
@@ -9,11 +8,12 @@ class ArticleAdmin(admin.ModelAdmin):
                  ("Author",      {"fields": ["author"]}),
                  ("Date info",   {"fields": ["pub_date"], "classes": ["collapse"]}),
                  (0,             {"fields": ["rating"]}),
-                 (None,          {"fields": ["comment"]}),
+                 (None,     {"fields": ["comment"]}),
+                 ("Image URL",   {"fields": ["image"]}),
                  ]
 
-    list_display = ("title", "text", "author", "pub_date", "was_published_recently",
-                    "rating", "comment")
+    list_display = ("title", "text", "pub_date",
+                    "was_published_recently", "rating", "comment", "image")
 
     list_filter = ["pub_date"]
 

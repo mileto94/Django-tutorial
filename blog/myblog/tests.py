@@ -54,27 +54,27 @@ class ArticleViewTest(TestCase):
         self.assertContains(response, "No articles are available")
         self.assertQuerysetEqual(response.context["latest_articles"], [])
 
-    def test_index_view_with_past_article(self):
-        create_article("James", "Arthur.Adsd.", -30, "joe", 3, "Nice")
-        response = self.client.get(reverse("myblog:index"))
-        self.assertQuerysetEqual(response.context["latest_articles"],
-                                 ["<Article: James>"])
+#     def test_index_view_with_past_article(self):
+#         create_article("James", "Arthur.Adsd.", -30, "joe", 3, "Nice")
+#         response = self.client.get(reverse("myblog:index"))
+#         self.assertQuerysetEqual(response.context["latest_articles"],
+#                                  ["<Article: James>"])
 
-    def test_index_view_with_future_article(self):
-        create_article("Homer", "Simpsons.fgfgfg.f", 30, "Emily", 3, "Good")
-        response = self.client.get(reverse("myblog:index"))
-        self.assertQuerysetEqual(response.context["latest_articles"], [])
+#     def test_index_view_with_future_article(self):
+#         create_article("Homer", "Simpsons.fgfgfg.f", 30, "Emily", 3, "Good")
+#         response = self.client.get(reverse("myblog:index"))
+#         self.assertQuerysetEqual(response.context["latest_articles"], [])
 
-    def test_index_view_with_past_and_future_articles(self):
-        create_article("James", "Arthur.adfasf.afas", -30, "joe", 3, "Nice")
-        create_article("Homer", "Simpsons.dfgyjf.sgdh", 30, "Emily", 3, "Good")
-        response = self.client.get(reverse("myblog:index"))
-        self.assertQuerysetEqual(response.context["latest_articles"],
-                                 ["<Article: James>"])
+#     def test_index_view_with_past_and_future_articles(self):
+#         create_article("James", "Arthur.adfasf.afas", -30, "joe", 3, "Nice")
+#         create_article("Homer", "Simpsons.dfgyjf.sgdh", 30, "Emily", 3, "Good")
+#         response = self.client.get(reverse("myblog:index"))
+#         self.assertQuerysetEqual(response.context["latest_articles"],
+#                                  ["<Article: James>"])
 
-    def test_index_view_with_two_past_articles(self):
-        create_article("John", "Atanasov.dfghdgf<xbv.zdg", -30, "emma", 4, "")
-        create_article("Grigor", "Dimitrov.sdv.drt", -30, "joe", 4, "Perfect!")
-        response = self.client.get(reverse("myblog:index"))
-        self.assertQuerysetEqual(response.context["latest_articles"],
-                                 ["<Article: Grigor>", "<Article: John>"])
+#     def test_index_view_with_two_past_articles(self):
+#         create_article("John", "Atanasov.dfghdgf<xbv.zdg", -30, "emma", 4, "")
+#         create_article("Grigor", "Dimitrov.sdv.drt", -30, "joe", 4, "Perfect!")
+#         response = self.client.get(reverse("myblog:index"))
+#         self.assertQuerysetEqual(response.context["latest_articles"],
+#                                  ["<Article: Grigor>", "<Article: John>"])
