@@ -96,20 +96,4 @@ $(document).ready(function() {
         $('.dropdown-menu').toggle();
     });
 
-    $(".contact").click(function(){
-        $(".home").removeClass("active");
-        $(this).addClass("active");
-        console.log($(this).hasClass('active'));
-    });
-
-    $(".home").click(function() {
-        $(".contact").removeClass("active");
-        $(this).addClass("active");
-    });
-
-    function c() {
-        if(document.URL.indexOf("contact") > -1) {
-            $(".contact").addClass("active");
-        }
-    }
 });
