@@ -8,7 +8,7 @@ class ArticleAdmin(admin.ModelAdmin):
                  ("Author",      {"fields": ["author"]}),
                  ("Date info",   {"fields": ["pub_date"], "classes": ["collapse"]}),
                  (0,             {"fields": ["rating"]}),
-                 (None,     {"fields": ["comment"]}),
+                 (None,          {"fields": ["comment"]}),
                  ("Image URL",   {"fields": ["image"]}),
                  ]
 

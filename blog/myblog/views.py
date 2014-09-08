@@ -23,10 +23,13 @@ def show_article(request, article_id):
         if request.POST.get("id"):
             article.rating += 1
             article.save()
+            print("show_article - like")
             return HttpResponse(request.POST.get("id"))
         article.comment = request.POST.get("comment")
         article.save()
+        print("show_article - send comment")
         return HttpResponse(article.comment)
+    print("show_article - get")
     return render(request, "myblog/show_article.html", {"article": article})
 
 
