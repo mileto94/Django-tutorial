@@ -12,8 +12,8 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 
 
-# BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+# BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, "templates"),
@@ -65,7 +65,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
-import dj_database_url
+#import dj_database_url
 
 
 DATABASES = {
@@ -79,7 +79,7 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.config()
+#`DATABASES['default'] = dj_database_url.config()
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
