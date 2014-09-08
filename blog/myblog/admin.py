@@ -10,10 +10,11 @@ class ArticleAdmin(admin.ModelAdmin):
                  (0,             {"fields": ["rating"]}),
                  (None,          {"fields": ["comment"]}),
                  ("Image URL",   {"fields": ["image"]}),
+                 ("Image URL",   {"fields": ["slider_image"]}),
                  ]
 
     list_display = ("title", "text", "pub_date",
-                    "was_published_recently", "rating", "comment", "image")
+                    "was_published_recently", "rating", "comment", "image", "slider_image")
 
     list_filter = ["pub_date"]
 
