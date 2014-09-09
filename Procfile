@@ -1,1 +1,1 @@
-web: python blog/manage.py runserver
+web: web: python myblog/manage.py runserver "0.0.0.0:$PORT"
