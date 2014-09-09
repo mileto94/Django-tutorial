@@ -19,7 +19,7 @@ class Author(models.Model):
 
 class Article(models.Model):
     title = models.CharField(max_length=30, default="")
-    text = models.TextField(max_length=1000000000)
+    text = models.TextField(max_length=10000)
     pub_date = models.DateTimeField("date published")
     author = models.ForeignKey(Author)
     image = models.URLField(default="http://www.zahorata.com/images/uploaded_images/pic_1343_bg.jpg")
