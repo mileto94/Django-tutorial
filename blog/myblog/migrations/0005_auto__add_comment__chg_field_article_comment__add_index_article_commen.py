@@ -19,7 +19,7 @@ class Migration(SchemaMigration):
         # Renaming column for 'Article.comment' to match new field type.
         db.rename_column(u'myblog_article', 'comment', 'comment_id')
         # Changing field 'Article.comment'
-        db.alter_column(u'myblog_article', 'comment_id', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['myblog.Comment']))
+#        db.alter_column(u'myblog_article', 'comment_id', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['myblog.Comment']))
         # Adding index on 'Article', fields ['comment']
         db.create_index(u'myblog_article', ['comment_id'])
 
