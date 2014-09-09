@@ -1,1 +1,1 @@
-python blog/manage.py runserver
+web: python ../blog/manage.py runserver
