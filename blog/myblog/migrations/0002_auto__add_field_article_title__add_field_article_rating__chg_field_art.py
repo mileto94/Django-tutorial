@@ -20,7 +20,7 @@ class Migration(SchemaMigration):
 
 
         # Changing field 'Article.text'
-        db.alter_column(u'myblog_article', 'text', self.gf('django.db.models.fields.CharField')(max_length=1000000000000))
+        db.alter_column(u'myblog_article', 'text', self.gf('django.db.models.fields.CharField')(max_length=100000))
 
     def backwards(self, orm):
         # Deleting field 'Article.title'
