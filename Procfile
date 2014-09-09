@@ -1,1 +1,1 @@
-web: gunicorn blog.wsgi
+python blog/manage.py runserver
