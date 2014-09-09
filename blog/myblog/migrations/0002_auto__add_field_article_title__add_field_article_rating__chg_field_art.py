@@ -40,7 +40,7 @@ class Migration(SchemaMigration):
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'pub_date': ('django.db.models.fields.DateTimeField', [], {}),
             'rating': ('django.db.models.fields.IntegerField', [], {'default': '0'}),
-            'text': ('django.db.models.fields.CharField', [], {'max_length': '1000000000000'}),
+            'text': ('django.db.models.fields.CharField', [], {'max_length': '10000'}),
             'title': ('django.db.models.fields.CharField', [], {'default': "''", 'max_length': '30'})
         },
         u'myblog.author': {
