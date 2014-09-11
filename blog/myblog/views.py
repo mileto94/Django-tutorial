@@ -10,8 +10,11 @@ def index(request):
                                              ).order_by("-pub_date")[:5]
     most_rated = Article.objects.order_by("-rating")[:3]
     for article in most_rated:
-        current = article.text.split(".")
-        article.text = current[0] + ". " + current[1]
+        if article.text.count(".") > 1:
+            current = article.text.split(".")
+            article.text = current[0] + ". " + current[1]
+        else:
+            article.text = article.text[:50]
     context = {"latest_articles": latest_articles, "most_rated": most_rated}
     return render(request, "myblog/index.html", context)
 
