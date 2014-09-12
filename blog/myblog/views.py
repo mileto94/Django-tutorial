@@ -14,7 +14,7 @@ def index(request):
             current = article.text.split(".")
             article.text = current[0] + ". " + current[1]
         else:
-            article.text = article.text[:50]
+            article.text = article.text[:30]
     context = {"latest_articles": latest_articles, "most_rated": most_rated}
     return render(request, "myblog/index.html", context)
 

@@ -87,18 +87,22 @@ class ArticleViewTest(TestCase):
         create_article("John", "Atanasov.dfghdgf<xbv.zdg", -30, "emma", 6, "")
         create_article("John", "Atanasov.dfghdgf<xbv.zdg", -30, "emma", 4, "")
         response = self.client.get(reverse("myblog:index"))
-        self.assertQuerysetEqual(response.context["latest_articles"],
+        self.assertQuerysetEqual(response.context["most_rated"],
                                  ["<Article: John>", "<Article: John>",
-                                  "<Article: John>", "<Article: John>",
-                                  "<Article: Grigor>"]
+                                  "<Article: John>"]
                                  )
 
     def test_index_view_for_most_rated_articles_without_dots(self):
-        create_article("John", "Atanasovdfghdgf<xbvzdg", -30, "emma", 9, "")
-        create_article("Grigor", "Dimitrov.sdvdrt", -30, "joe", 4, "Perfect!")
-        create_article("John", "Atanasovdfghdgf<xbv.zdg", -30, "emma", 8, "")
+        create_article("John", "Atanasovdfghdgfsfffffffffffffffffffffffxbvzdg",
+                       -30, "emma", 9, "")
+        create_article("Grigor", "Dimitrossssssssv.sdvsssssssss.dfs.ssdrt", -30,
+                       "joe", 4, "Perfect!")
+        create_article("John", "Atanasosssssssssssssssssssss..svdfghdgfxbv.zdg",
+                       -30, "emma", 8, "")
         response = self.client.get(reverse("myblog:index"))
-        self.assertQuerysetEqual(response.context["latest_articles"],
-                                 ["<Article: John>", "<Article: Grigor>",
-                                  "<Article: John>"]
-                                 )
+        result = response.context["most_rated"]
+        expected = [article.text.encode("utf-8") for article in result]
+        received = ['Atanasovdfghdgfsffffffffffffff',
+                    'Atanasosssssssssssssssssssss. ',
+                    'Dimitrossssssssv. sdvsssssssss']
+        self.assertEqual(received, expected)
